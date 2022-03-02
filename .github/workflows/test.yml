@@ -13,7 +13,7 @@ jobs:
     - uses: actions/setup-go@v2
       with:
         go-version: ${{ matrix.version }}
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - run: go mod tidy && git diff --exit-code go.mod go.sum
     - run: go vet ./...
     - run: mv ./tools ./tools.go
